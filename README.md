@@ -6,7 +6,7 @@ This repository contains my solution to the **Xmartlabs QA Technical Challenge**
 1. **Functional Testing & User Story Analysis**  
 2. **Regression Testing Plan**  
 3. **Exploratory Testing (SauceDemo)**  
-4. **Automation (E2E with Playwright)**  
+4. **Automation (E2E with Cypress)**  
 
 ---
 
