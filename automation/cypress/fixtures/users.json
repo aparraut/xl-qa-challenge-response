@@ -1,0 +1,16 @@
+{
+  "performance": {
+    "username": "performance_glitch_user",
+    "password": "secret_sauce",
+    "firstName": "QA",
+    "lastName": "Tester",
+    "postalCode": "12345"
+  },
+  "standard": {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "firstName": "QA",
+    "lastName": "Tester",
+    "postalCode": "12345"
+  }
+}
