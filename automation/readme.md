@@ -1,9 +1,13 @@
-QA Automation Project
+# QA Automation Project
 
-This repository contains Cypress automated tests prepared for a QA job application. The tests are organized into mandatory and bonus scenarios for clarity.
+This repository contains **Cypress automated tests** prepared for the Xmartlabs QA Technical Challenge.  
+The tests are organized into **mandatory** and **bonus** scenarios for clarity.
 
-📂 Project Structure
+---
 
+## 📂 Project Structure
+
+```
 cypress/
 ├── e2e/
 │   ├── mandatory/
@@ -14,90 +18,88 @@ cypress/
 │   └── users.json
 └── support/
     └── e2e.js
+```
 
-⚙️ Setup
+---
 
-Clone the repository.
+## ⚙️ Setup
 
-Install dependencies:
+1. Clone the repository  
+   ```bash
+   git clone <[repo-url]>
+   ```
+2. Install dependencies  
+   ```bash
+   npm install
+   ```
+3. Open Cypress Test Runner  
+   ```bash
+   npx cypress open
+   ```
+4. Run all tests in headless mode  
+   ```bash
+   npx cypress run
+   ```
 
-npm install
+---
 
-Open Cypress Test Runner:
+## 🧪 Tests
 
-npx cypress open
+### Mandatory Test: Purchase Flow
+- **File:** `cypress/e2e/mandatory/purchaseFlow.cy.js`  
+- **User:** `performance_glitch_user`  
+- **Scenario:**
+  - Login with glitch user  
+  - Select product from Product Detail Page  
+  - Add product to cart  
+  - Complete checkout flow  
+  - Validate confirmation message  
+  - Assert that cart is empty after purchase  
 
-Run all tests in headless mode:
+---
 
-npx cypress run
+### Bonus Test: Logout with Cart Persistence
+- **File:** `cypress/e2e/bonus/logoutPersistence.cy.js`  
+- **User:** `standard_user`  
+- **Scenario:**
+  - Login with standard user  
+  - Add product to cart  
+  - Logout via side menu  
+  - Login again  
+  - Assert that cart still contains the product  
 
-🧪 Tests
+---
 
-Mandatory Test: Purchase Flow
+## 📄 Design Decisions
 
-File: cypress/e2e/mandatory/purchaseFlow.cy.js
+- **Custom Commands:** Login encapsulated in `cy.login()` for reuse  
+- **Fixtures:** User credentials and checkout data stored in `users.json`  
+- **Selectors:** Prefer `data-test` attributes for stability  
+- **Assertions:** Added intermediate checks (URL includes, cart badge, product presence)  
 
-User: performance_glitch_user
+---
 
-Scenario:
+## ⚠️ Limitations
 
-Login with glitch user.
+- Tests depend on **SauceDemo** availability  
+- `performance_glitch_user` introduces intentional delays; timeouts adjusted accordingly  
+- No mocks or stubs; tests run against live demo site  
 
-Select product from Product Detail Page.
+---
 
-Add product to cart.
+## 📸 Evidence
 
-Complete checkout flow.
+Cypress automatically generates **screenshots** and **videos** in:  
+- `cypress/screenshots/`  
+- `cypress/videos/`  
 
-Validate confirmation message.
+---
 
-Assert that cart is empty after purchase.
+## ✅ Summary
 
-Bonus Test: Logout with Cart Persistence
-
-File: cypress/e2e/bonus/logoutPersistence.cy.js
-
-User: standard_user
-
-Scenario:
-
-Login with standard user.
-
-Add product to cart.
-
-Logout via side menu.
-
-Login again.
-
-Assert that cart still contains the product.
-
-📄 Design Decisions
-
-Custom Commands: Login encapsulated in cy.login() for reuse.
-
-Fixtures: User credentials and checkout data stored in users.json.
-
-Selectors: Prefer data-test attributes for stability.
-
-Assertions: Added intermediate checks (URL includes, cart badge, product presence).
-
-⚠️ Limitations
-
-Tests depend on SauceDemo availability.
-
-performance_glitch_user introduces intentional delays; timeouts adjusted accordingly.
-
-No mocks or stubs; tests run against live demo site.
-
-📸 Evidence
-
-Cypress automatically generates screenshots and videos in cypress/screenshots/ and cypress/videos/.
+- **Mandatory:** End-to-end purchase flow with glitch user  
+- **Bonus:** Logout and cart persistence with standard user  
+- Organized structure, clear documentation, and professional QA practices  
+```
 
 
-✅ Summary
-
-Mandatory: End-to-end purchase flow with glitch user.
-
-Bonus: Logout and cart persistence with standard user.
-
-Organized structure, clear documentation, and professional QA practices.
