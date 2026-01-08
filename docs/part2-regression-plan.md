@@ -42,4 +42,4 @@ Run in this priority order: Positive paths → Negative paths → Cross-device c
 - Payment validation receives extra attention due to its direct revenue impact.  
 - Responsiveness check (TC-016) is mandatory because the challenge explicitly requires desktop + mobile support.
 
-This selection covers ~80% of the critical risk surface while respecting severe time constraints.
+
