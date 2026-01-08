@@ -1,7 +1,7 @@
 ## Part 3: Exploratory Testing
 
 > Note: For clarity and evaluator convenience, exploratory testing findings are presented in a concise format. 
-> In a real QA environment (e.g., Jira/ClickUp), each issue would be documented with full detail (steps, expected vs. actual results, etc). 
+> In a real QA environment (e.g., Jira/ClickUp), each issue would be documented with full detail (prerequisites, steps, expected vs. actual results, etc). 
 > Here, brevity was chosen to keep the repository clean and easy to review.
 
 ### Approach
