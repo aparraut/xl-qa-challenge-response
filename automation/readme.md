@@ -100,4 +100,3 @@ Cypress automatically generates **screenshots** and **videos** in:
 - **Mandatory:** End-to-end purchase flow with glitch user  
 - **Bonus:** Logout and cart persistence with standard user  
 - Organized structure, clear documentation, and professional QA practices  
-```
