@@ -1,6 +1,6 @@
 # XL QA Challenge Response
 
-This repository contains the solution to the **Xmarlabs QA Technical Challenge**, covering multiple aspects of software quality assurance for an e-commerce application.  
+This repository contains the solution to the **Xmartlabs QA Technical Challenge**, covering multiple aspects of software quality assurance for an e-commerce application.  
 The work is divided into **Functional Testing, Regression Planning, Exploratory Testing, and Automation**.
 
 ---
