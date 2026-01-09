@@ -101,5 +101,3 @@ Cypress automatically generates **screenshots** and **videos** in:
 - **Bonus:** Logout and cart persistence with standard user  
 - Organized structure, clear documentation, and professional QA practices  
 ```
-
-
