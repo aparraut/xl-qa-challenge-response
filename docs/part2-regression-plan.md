@@ -8,7 +8,7 @@ The goal is to create a focused **regression plan** by selecting the most critic
 - **Risk**: High-impact areas (payment, order confirmation, core flow)
 - **Change likelihood**: Areas most likely affected by recent updates (validation logic, UI, responsiveness)
 - **Coverage**: Mix of positive and negative paths + cross-device check
-- **Efficiency**: Reuse Part 1 test cases; target 7–8 cases to fit a short testing window
+- **Efficiency**: Reuse Part 1 test cases; target 9–10 cases to fit a short testing window
 
 **Justification**  
 Focus is placed on the **end-to-end happy path** (successful purchase) and the **most common failure points** (input validation & errors).  
