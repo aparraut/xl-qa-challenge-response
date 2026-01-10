@@ -28,15 +28,19 @@ cypress/
    ```bash
    git clone https://github.com/aparraut/xl-qa-challenge-response.git
    ```
-2. Install dependencies  
+2. Move into the automation folder
+   ```bash
+   cd xl-qa-challenge-response/automation
+   ```   
+3. Install dependencies  
    ```bash
    npm install
    ```
-3. Open Cypress Test Runner  
+4. Open Cypress Test Runner  
    ```bash
    npx cypress open
    ```
-4. Run all tests in headless mode  
+5. Run all tests in headless mode  
    ```bash
    npx cypress run
    ```
