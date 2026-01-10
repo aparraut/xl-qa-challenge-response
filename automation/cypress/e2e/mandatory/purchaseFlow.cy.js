@@ -1,21 +1,23 @@
 describe('Mandatory Purchase Flow - performance_glitch_user', () => {
-  // Load users fixture before tests
   let users
+
   before(() => {
     cy.fixture('users').then((data) => {
       users = data
     })
   })
 
-  // Use custom login command with performance_glitch_user
   beforeEach(() => {
     cy.login(users.performance.username, users.performance.password)
     cy.url().should('include', '/inventory.html')
   })
 
-  it('Completes purchase flow from Product Detail Page and validates empty cart after purchase', () => {
-    // 1. Select first product and open its Product Detail Page (PDP)
-    cy.get('[data-test="inventory-item-name"]').first().click()
+  it('Completes purchase flow from Product Detail Page and validates order summary with dynamic product name', () => {
+    // 1. Select first product, store its name as alias, then open Product Detail Page (PDP)
+    cy.get('[data-test="inventory-item-name"]').first().then(($el) => {
+      cy.wrap($el.text().trim()).as('selectedProduct')
+      cy.wrap($el).click()
+    })
     cy.url().should('include', '/inventory-item.html')
 
     // 2. Add product to cart from PDP
@@ -39,6 +41,16 @@ describe('Mandatory Purchase Flow - performance_glitch_user', () => {
     cy.get('[data-test="postalCode"]').type(users.performance.postalCode)
     cy.get('[data-test="continue"]').click()
     cy.url().should('include', '/checkout-step-two.html')
+
+    // Verify that the selected product appears in the order summary
+    cy.get('.cart_item').should('have.length', 1)
+    cy.get('@selectedProduct').then((productName) => {
+      cy.get('.inventory_item_name').should('contain.text', productName)
+    })
+
+    // Verify that the price is displayed in the order summary
+    cy.get('.inventory_item_price').should('be.visible')
+    cy.get('.summary_subtotal_label').should('contain.text', 'Item total')
 
     // Finish purchase
     cy.get('[data-test="finish"]').click()
