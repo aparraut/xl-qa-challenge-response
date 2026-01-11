@@ -13,7 +13,7 @@ cypress/
 │   ├── mandatory/
 │   │   └── purchaseFlow.cy.js
 │   └── bonus/
-│       └── logoutPersistence.cy.js
+│       └── emptyCart.cy.js
 ├── fixtures/
 │   └── users.json
 └── support/
@@ -62,15 +62,16 @@ cypress/
 
 ---
 
-### Bonus Test: Logout with Cart Persistence
-- **File:** `cypress/e2e/bonus/logoutPersistence.cy.js`  
+### Bonus Test: Empty Cart Checkout
+- **File:** `cypress/e2e/bonus/emptyCart.cy.js`  
 - **User:** `standard_user`  
 - **Scenario:**
   - Login with standard user  
-  - Add product to cart  
-  - Logout via side menu  
-  - Login again  
-  - Assert that cart still contains the product  
+  - Go to cart without adding products 
+  - Attempt to checkout
+  - Fill checkout form  
+  - Expectation: checkout should be blocked, but the app incorrectly allows completion
+  - Test fails by design, exposing a critical business logic defect
 
 ---
 
@@ -80,6 +81,7 @@ cypress/
 - **Fixtures:** User credentials and checkout data stored in `users.json`  
 - **Selectors:** Prefer `data-test` attributes for stability  
 - **Assertions:** Added intermediate checks (URL includes, cart badge, product presence)  
+- **Bonus Test:** Selected a case with high business impact (invalid purchase flow)
 
 ---
 
@@ -88,6 +90,7 @@ cypress/
 - Tests depend on **SauceDemo** availability  
 - `performance_glitch_user` introduces intentional delays; timeouts adjusted accordingly  
 - No mocks or stubs; tests run against live demo site  
+- Bonus Test fails as expected, since the application currently allows checkout with empty cart
 
 ---
 
@@ -96,6 +99,19 @@ cypress/
 Cypress automatically generates **screenshots** and **videos** in:  
 - `cypress/screenshots/`  
 - `cypress/videos/`  
+
+---
+
+## 📄 Test Report (Optional)
+
+The Bonus Test **Empty Cart Checkout** fails as expected, proving the application allows completing checkout with no items.  
+Below is evidence captured during Cypress run:
+
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Video: [Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+This demonstrates the defect and validates the automation setup.
 
 ---
 
