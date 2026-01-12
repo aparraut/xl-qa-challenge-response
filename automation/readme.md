@@ -109,7 +109,7 @@ Below is evidence captured during Cypress run:
 
 [Looks like the result wasn't safe to show. Let's switch things up and try something else!]
 
-Video: [Checkout with Empty Cart_Failure.mp4](docs/screenshots/emptyCart.mp4)
+Video: [Checkout with Empty Cart_Failure.mp4](../docs/screenshots/emptyCart.mp4)
 
 This demonstrates the defect and validates the automation setup.
 
