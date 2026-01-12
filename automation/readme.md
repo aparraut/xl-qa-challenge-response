@@ -107,8 +107,7 @@ Cypress automatically generates **screenshots** and **videos** in:
 The Bonus Test **Empty Cart Checkout** fails as expected, proving the application allows completing checkout with no items.  
 Below is evidence captured during Cypress run:
 
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
-
+[Bonus Test Failure Screenshot](../docs/screenshots/CheckoutWithEmptyCart.png)
 Video: [Checkout with Empty Cart_Failure.mp4](../docs/screenshots/emptyCart.mp4)
 
 This demonstrates the defect and validates the automation setup.
